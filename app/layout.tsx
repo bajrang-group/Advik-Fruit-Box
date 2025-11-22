@@ -12,7 +12,7 @@ export const metadata = {
   description: "Responsive Bootstrap4 Shop Template, Created by Bajrang Group",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
