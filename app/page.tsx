@@ -1,7 +1,6 @@
-import './globals.css';
 import CountDown from "../components/Countdown"
 import DynamicMonth from "../components/DynamicMonth"
-import FeaturedProductsCarousel from "../components/FeaturedProductsCarousel"
+import FeaturedProductsCarousel from "../components/client/FeaturedProductsCarousel"
 import Footer from "../components/Footer"
 import Copyright  from "../components/Copyright"
 import Loader  from "../components/Loader"
@@ -9,40 +8,21 @@ import Header  from "../components/Header"
 import FeaturesSection  from "../components/FeaturesSection"
 import WhatsAppPopup  from "../components/WhatsAppPopup"
 import SubscriptionSection  from "../components/SubscriptionSection"
+import AdvertisementSection from "@/components/AdvertisementSection";
+import SearchArea from "@/components/SearchArea";
+import TestimonialSection from "@/components/TestimonialSection";
+import ProductSection from "@/components/ProductSection";
+
 
 export default function Home() {
   return (
     <>
 
-          <Loader />
-
-          <Header/>
-
-        <WhatsAppPopup />
+        
 
 
-      {/* search area */}
-      <div className="search-area">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <span className="close-btn">
-                <i className="fas fa-window-close"></i>
-              </span>
-              <div className="search-bar">
-                <div className="search-bar-tablecell">
-                  <h3>Search For:</h3>
-                  <input type="text" placeholder="Keywords" />
-                  <button type="submit">
-                    Search <i className="fas fa-search"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> 
-      {/* end search area */}
+   
+
 
    
    
@@ -96,54 +76,10 @@ export default function Home() {
       
 
       {/* product section */}
-      <div className="product-section mt-24 mb-150">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 offset-lg-2 text-center">
-              <div className="section-title">
-                <h3><span className="orange-text">Our</span> Products</h3>
-                <p>n antioxidant powerhouse! Indulge in a premium, vibrant mix of exotic Dragon Fruit, Kiwi, and fresh Strawberries, paired with protein-rich sprouts. Your perfect ready-to-eat detox meal.</p>
-              </div>
-            </div>
-          </div>
+   
 
-          <div className="row">
-            <div className="col-lg-4 col-md-6 text-center">
-              <div className="single-product-item">
-                <div className="product-image">
-                  <a href="single-product.html"><img src="/assets/img/products/product-1.png" alt="" /></a>
-                </div>
-                <h3>Exotic Kiwi Strawberry Dragon Fruit Bowl.</h3>
-                <p className="product-price"><span>Per Box</span> ₹ 120 </p>
-                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
-              </div>
-            </div>
+<ProductSection />
 
-            <div className="col-lg-4 col-md-6 text-center">
-              <div className="single-product-item">
-                <div className="product-image">
-                  <a href="single-product.html"><img src="/assets/img/products/product-2.png" alt="" /></a>
-                </div>
-                <h3>Tropical Fusion Seasonal Fruit Platter</h3>
-                <p className="product-price"><span>Per Box</span> ₹ 199 </p>
-                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center ">
-              <div className="single-product-item ">
-                <div className="product-image">
-                  <a href="single-product.html"><img src="/assets/img/products/product-3.png" alt="" /></a>
-                </div>
-                <h3>Wholesome Guava & Sprout Energy Box</h3>
-                <p className="product-price"><span>Per Box</span> ₹ 349 </p>
-                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> 
-      {/* end product section */}
 
       {/* cart banner section */}
       <section className="cart-banner pt-100 pb-100">
@@ -206,88 +142,12 @@ export default function Home() {
       {/* end cart banner section */}
 
       {/* testimonail-section */}
-      <div className="testimonail-section mt-150 mb-150">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-10 offset-lg-1 text-center">
-              <div className="testimonial-sliders">
-                <div className="single-testimonial-slider">
-                  <div className="client-avater">
-                    <img src="/assets/img/avaters/avatar1.png" alt="" />
-                  </div>
-                  <div className="client-meta">
-                    <h3>Saira Hakim <span>Local shop owner</span></h3>
-                    <p className="testimonial-body">
-                      " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-                    </p>
-                    <div className="last-icon">
-                      <i className="fas fa-quote-right"></i>
-                    </div>
-                  </div>
-                </div>
+      <TestimonialSection />
 
-                <div className="single-testimonial-slider">
-                  <div className="client-avater">
-                    <img src="/assets/img/avaters/avatar2.png" alt="" />
-                  </div>
-                  <div className="client-meta">
-                    <h3>David Niph <span>Local shop owner</span></h3>
-                    <p className="testimonial-body">
-                      " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-                    </p>
-                    <div className="last-icon">
-                      <i className="fas fa-quote-right"></i>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="single-testimonial-slider">
-                  <div className="client-avater">
-                    <img src="/assets/img/avaters/avatar3.png" alt="" />
-                  </div>
-                  <div className="client-meta">
-                    <h3>Jacob Sikim <span>Local shop owner</span></h3>
-                    <p className="testimonial-body">
-                      " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-                    </p>
-                    <div className="last-icon">
-                      <i className="fas fa-quote-right"></i>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       {/* end testimonail-section */}
 
       {/* advertisement section */}
-      <div className="abt-section mb-150">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 col-md-12">
-              <div className="abt-bg">
-                <a href="https://www.youtube.com/watch?v=DBLlFWYcIGQ" className="video-play-btn popup-youtube">
-                  <i className="fas fa-play"></i>
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-6 col-md-12">
-              <div className="abt-text">
-                <p className="top-sub">Since Year 1999</p>
-                <h2>We are <span className="orange-text">Fruitkha</span></h2>
-                <p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
-                <a href="about.html" className="boxed-btn mt-4">know more</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
+     <AdvertisementSection />
       {/* end advertisement section */}
 
     
@@ -313,9 +173,7 @@ export default function Home() {
 
       <FeaturedProductsCarousel />
 
-      <Footer />
-
-      <Copyright />
+    
 
   
   </>);

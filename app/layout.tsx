@@ -1,4 +1,11 @@
 import Script from "next/script";
+import "./globals.css";  
+import Loader  from "../components/Loader"
+import Header  from "../components/Header"
+import FeaturesSection  from "../components/FeaturesSection"
+import WhatsAppPopup  from "../components/WhatsAppPopup"
+import Footer from "../components/Footer"
+import Copyright  from "../components/Copyright"
 
 export const metadata = {
   title: "Advik Fruit Box",
@@ -32,9 +39,20 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="/assets/css/meanmenu.min.css" />
         <link rel="stylesheet" href="/assets/css/main.css" />
         <link rel="stylesheet" href="/assets/css/responsive.css" />
+       
       </head>
       <body>
+  <Loader />
+
+          <Header/>
+
+        <WhatsAppPopup />
+
         {children}
+
+          <Footer />
+
+      <Copyright />
 
         {/* Scripts: jQuery must be loaded before plugins */}
         <Script src="/assets/js/jquery-1.11.3.min.js" strategy="beforeInteractive" />

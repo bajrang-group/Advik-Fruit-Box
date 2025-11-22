@@ -36,7 +36,7 @@ export default function SubscriptionSection() {
                   </p>
 
                   <div className="price-box mb-4">
-                    <span className="text-4xl font-extrabold text-orange-500">$15</span>
+                    <span className="text-4xl font-extrabold text-orange-500"> ₹99</span>
                     <p className="text-sm text-gray-500">per week</p>
                   </div>
 
@@ -60,7 +60,7 @@ export default function SubscriptionSection() {
                   <p className="text-gray-700 mb-3">Best value for healthy fruit lovers.</p>
 
                   <div className="price-box mb-4">
-                    <span className="text-4xl font-extrabold text-orange-600">$50</span>
+                    <span className="text-4xl font-extrabold text-orange-600"> ₹2100</span>
                     <p className="text-sm text-gray-600">per month</p>
                   </div>
 
@@ -87,7 +87,7 @@ export default function SubscriptionSection() {
                   </p>
 
                   <div className="price-box mb-4">
-                    <span className="text-4xl font-extrabold text-orange-500">$500</span>
+                    <span className="text-4xl font-extrabold text-orange-500"> ₹9900</span>
                     <p className="text-sm text-gray-500">per year</p>
                   </div>
 
