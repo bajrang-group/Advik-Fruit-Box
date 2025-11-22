@@ -1,199 +1,322 @@
-"use client";
-
-import Image from "next/image";
-import HeroImg from "../public/heroImg.png"
+import './globals.css';
+import CountDown from "../components/Countdown"
+import DynamicMonth from "../components/DynamicMonth"
+import FeaturedProductsCarousel from "../components/FeaturedProductsCarousel"
+import Footer from "../components/Footer"
+import Copyright  from "../components/Copyright"
+import Loader  from "../components/Loader"
+import Header  from "../components/Header"
+import FeaturesSection  from "../components/FeaturesSection"
+import WhatsAppPopup  from "../components/WhatsAppPopup"
+import SubscriptionSection  from "../components/SubscriptionSection"
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full bg-white">
+    <>
 
-      {/* NAVBAR */}
-      <header className="w-full border-b bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-16">
-          <h1 className="text-2xl font-bold text-green-600">Advik Fruit Box</h1>
-          <nav className="hidden md:flex gap-8 text-gray-700 font-medium">
-            <a href="#" className="hover:text-green-500">Home</a>
-            <a href="#" className="hover:text-green-500">Shop</a>
-            <a href="#" className="hover:text-green-500">Subscriptions</a>
-            <a href="#" className="hover:text-green-500">Build Your Bowl</a>
-            <a href="#" className="hover:text-green-500">Contact</a>
-          </nav>
-          <button className="px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700">
-            Cart (0)
-          </button>
-        </div>
-      </header>
+          <Loader />
 
-      {/* HERO SECTION */}
-      <section className="w-full bg-green-50 py-20">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center">
-          
-          <div className="flex-1">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
-              Freshly Cut Fruits,<br />
-              Delivered to Your Doorstep 🍉
-            </h2>
-            <p className="mt-4 text-gray-600 text-lg">
-              Clean • Hygienic • Ready-To-Eat fruit bowls, subscriptions & custom mixes.
-            </p>
+          <Header/>
 
-            <div className="mt-6 flex gap-4">
-              <button className="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 text-lg">
-                Start Subscription
-              </button>
-              <button className="px-6 py-3 bg-white border border-gray-300 rounded-full text-gray-700 hover:bg-gray-100 text-lg">
-                Build Your Bowl
-              </button>
-            </div>
-          </div>
+        <WhatsAppPopup />
 
-          <div className="flex-1 mt-10 md:mt-0 flex justify-center">
-            <div className="relative w-80 h-80">
-              <Image
-                src={HeroImg}
-                alt="Fruit Bowl"
-                fill
-                className="rounded-2xl object-cover shadow-lg"
-              />
-            </div>
-          </div>
 
-        </div>
-      </section>
-
-      {/* CATEGORY SECTION */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <h3 className="text-3xl font-bold text-gray-800 text-center">
-            Explore Our Range 🍓
-          </h3>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-10">
-
-            <div className="p-6 bg-white shadow-md rounded-xl text-center hover:scale-105 transition">
-              <Image
-                src={HeroImg}
-                alt="Fresh Bowls"
-                width={200}
-                height={200}
-                className="mx-auto"
-              />
-              <h4 className="mt-4 font-semibold text-gray-700 text-lg">Fresh Cut Bowls</h4>
-            </div>
-
-            <div className="p-6 bg-white shadow-md rounded-xl text-center hover:scale-105 transition">
-              <Image
-                src={HeroImg}
-                alt="Subscriptions"
-                width={200}
-                height={200}
-                className="mx-auto"
-              />
-              <h4 className="mt-4 font-semibold text-gray-700 text-lg">Subscriptions</h4>
-            </div>
-
-            <div className="p-6 bg-white shadow-md rounded-xl text-center hover:scale-105 transition">
-              <Image
-                src={HeroImg}
-                alt="Custom Bowl"
-                width={200}
-                height={200}
-                className="mx-auto"
-              />
-              <h4 className="mt-4 font-semibold text-gray-700 text-lg">Build Your Bowl</h4>
-            </div>
-
-            <div className="p-6 bg-white shadow-md rounded-xl text-center hover:scale-105 transition">
-              <Image
-                src={HeroImg}
-                alt="Premium Fruits"
-                width={200}
-                height={200}
-                className="mx-auto"
-              />
-              <h4 className="mt-4 font-semibold text-gray-700 text-lg">Premium Cut Fruits</h4>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* SUBSCRIPTION SECTION */}
-      <section className="py-20 bg-green-50">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h3 className="text-3xl font-bold text-gray-800">Flexible Subscriptions 🍍</h3>
-          <p className="text-gray-600 mt-2 text-lg">Choose daily, weekly, monthly or yearly plans.</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12">
-            
-            {["Daily", "Weekly", "Monthly", "Yearly"].map((plan) => (
-              <div key={plan} className="p-8 bg-white rounded-2xl shadow-lg hover:scale-105 transition">
-                <h4 className="text-2xl font-bold text-green-600">{plan}</h4>
-                <p className="mt-2 text-gray-600">Fresh fruits delivered on schedule.</p>
-                <button className="mt-6 px-6 py-3 rounded-full bg-green-600 text-white hover:bg-green-700">
-                  Subscribe
-                </button>
+      {/* search area */}
+      <div className="search-area">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <span className="close-btn">
+                <i className="fas fa-window-close"></i>
+              </span>
+              <div className="search-bar">
+                <div className="search-bar-tablecell">
+                  <h3>Search For:</h3>
+                  <input type="text" placeholder="Keywords" />
+                  <button type="submit">
+                    Search <i className="fas fa-search"></i>
+                  </button>
+                </div>
               </div>
-            ))}
+            </div>
+          </div>
+        </div>
+      </div> 
+      {/* end search area */}
 
+   
+   
+      {/* hero area */}
+<div className="hero-area relative w-full h-[90vh] overflow-hidden">
+
+  {/* Background Video */}
+  <video
+    className="absolute top-0 left-0 w-full h-full object-cover"
+    autoPlay
+    loop
+    muted
+      preload="none"
+      poster="/assets/img/hero-bg-png"
+    playsInline
+  >
+    <source src="/assets/img/herobg-vid.mp4" type="video/mp4" />
+  </video>
+
+  {/* Dark Overlay */}
+  <div className="absolute top-0 left-0 w-full h-full bg-black/70"></div>
+
+  {/* Hero Content */}
+  <div className="container relative z-10">
+    <div className="row">
+      <div className="col-lg-9 offset-lg-2 text-center">
+        <div className="hero-text">
+          <div className="hero-text-tablecell">
+            <p className="subtitle text-orange-400">Fresh &amp; Organic</p>
+            <h1 className="text-white">Fresh Fruits Packed With Love & Care</h1>
+            <div className="hero-btns mt-4">
+              <a href="shop.html" className="boxed-btn">
+                Explore Fruit Boxes
+              </a>
+              <a href="contact.html" className="bordered-btn">
+                Get in Touch
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+      {/* end hero area */}
+
+      {/* features list section */}
+     <FeaturesSection />
+      
+
+      {/* product section */}
+      <div className="product-section mt-24 mb-150">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 offset-lg-2 text-center">
+              <div className="section-title">
+                <h3><span className="orange-text">Our</span> Products</h3>
+                <p>n antioxidant powerhouse! Indulge in a premium, vibrant mix of exotic Dragon Fruit, Kiwi, and fresh Strawberries, paired with protein-rich sprouts. Your perfect ready-to-eat detox meal.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-lg-4 col-md-6 text-center">
+              <div className="single-product-item">
+                <div className="product-image">
+                  <a href="single-product.html"><img src="/assets/img/products/product-1.png" alt="" /></a>
+                </div>
+                <h3>Exotic Kiwi Strawberry Dragon Fruit Bowl.</h3>
+                <p className="product-price"><span>Per Box</span> ₹ 120 </p>
+                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
+              </div>
+            </div>
+
+            <div className="col-lg-4 col-md-6 text-center">
+              <div className="single-product-item">
+                <div className="product-image">
+                  <a href="single-product.html"><img src="/assets/img/products/product-2.png" alt="" /></a>
+                </div>
+                <h3>Tropical Fusion Seasonal Fruit Platter</h3>
+                <p className="product-price"><span>Per Box</span> ₹ 199 </p>
+                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
+              </div>
+            </div>
+
+            <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center ">
+              <div className="single-product-item ">
+                <div className="product-image">
+                  <a href="single-product.html"><img src="/assets/img/products/product-3.png" alt="" /></a>
+                </div>
+                <h3>Wholesome Guava & Sprout Energy Box</h3>
+                <p className="product-price"><span>Per Box</span> ₹ 349 </p>
+                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+      {/* end product section */}
+
+      {/* cart banner section */}
+      <section className="cart-banner pt-100 pb-100">
+        <div className="container">
+          <div className="row clearfix">
+    <div className="image-column col-lg-6  ">
+  <div className="image relative w-full min-h-[450px] flex items-center justify-center  -mt-28">
+
+    {/* Price badge */}
+    <div className="price-box absolute top-5 left-5 z-20 border-4  p-2">
+      <div className="inner-price border-2  p-1">
+        <span className="price">
+          <strong>34%</strong><br />off per kg
+        </span>
+      </div>
+    </div>
+
+    {/* BIG centered image */}
+    <img
+      src="/assets/img/fruitbox.png"
+      alt=""
+      className="absolute inset-0 m-auto w-[80%] max-w-[750px] object-contain z-10 border-4 border-purple-500"
+    />
+    
+  </div>
+</div>
+
+
+            <div className="content-column col-lg-6">
+              <h3><span className="orange-text">Deal</span> of the month</h3>
+              <h4>Special Discount Fruit Box</h4>
+              <div className="text">Freshly hand-picked fruits delivered straight to your doorstep. Packed with nutrition, flavor, and care in every box.</div>
+
+              {/* Countdown Timer */}
+              {/* <div className="time-counter">
+                <div className="time-countdown clearfix" data-countdown="2020/2/01">
+                  <div className="counter-column">
+                    <div className="inner"><span className="count">00</span>Days</div>
+                  </div>
+                  <div className="counter-column">
+                    <div className="inner"><span className="count">00</span>Hours</div>
+                  </div>
+                  <div className="counter-column">
+                    <div className="inner"><span className="count">00</span>Mins</div>
+                  </div>
+                  <div className="counter-column">
+                    <div className="inner"><span className="count">00</span>Secs</div>
+                  </div>
+                </div>
+              </div> */}
+              <CountDown/>
+
+              <a href="cart.html" className="cart-btn mt-3"><i className="fas fa-shopping-cart"></i> Order Your Fruit Box</a>
+            </div>
+
+            
           </div>
         </div>
       </section>
+      {/* end cart banner section */}
 
-      {/* TESTIMONIALS */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h3 className="text-3xl font-bold text-gray-800">What Our Customers Say ❤️</h3>
+      {/* testimonail-section */}
+      <div className="testimonail-section mt-150 mb-150">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-10 offset-lg-1 text-center">
+              <div className="testimonial-sliders">
+                <div className="single-testimonial-slider">
+                  <div className="client-avater">
+                    <img src="/assets/img/avaters/avatar1.png" alt="" />
+                  </div>
+                  <div className="client-meta">
+                    <h3>Saira Hakim <span>Local shop owner</span></h3>
+                    <p className="testimonial-body">
+                      " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+                    </p>
+                    <div className="last-icon">
+                      <i className="fas fa-quote-right"></i>
+                    </div>
+                  </div>
+                </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
-            <div className="p-6 rounded-xl bg-gray-50 shadow">
-              <p className="text-gray-600">“Super fresh and hygienic fruits. Loved the packaging!”</p>
-              <h4 className="mt-4 font-semibold text-gray-700">Amit Sharma</h4>
-            </div>
+                <div className="single-testimonial-slider">
+                  <div className="client-avater">
+                    <img src="/assets/img/avaters/avatar2.png" alt="" />
+                  </div>
+                  <div className="client-meta">
+                    <h3>David Niph <span>Local shop owner</span></h3>
+                    <p className="testimonial-body">
+                      " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+                    </p>
+                    <div className="last-icon">
+                      <i className="fas fa-quote-right"></i>
+                    </div>
+                  </div>
+                </div>
 
-            <div className="p-6 rounded-xl bg-gray-50 shadow">
-              <p className="text-gray-600">“Perfect for busy professionals. Daily subscription is amazing!”</p>
-              <h4 className="mt-4 font-semibold text-gray-700">Sneha Patil</h4>
-            </div>
+                <div className="single-testimonial-slider">
+                  <div className="client-avater">
+                    <img src="/assets/img/avaters/avatar3.png" alt="" />
+                  </div>
+                  <div className="client-meta">
+                    <h3>Jacob Sikim <span>Local shop owner</span></h3>
+                    <p className="testimonial-body">
+                      " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+                    </p>
+                    <div className="last-icon">
+                      <i className="fas fa-quote-right"></i>
+                    </div>
+                  </div>
+                </div>
 
-            <div className="p-6 rounded-xl bg-gray-50 shadow">
-              <p className="text-gray-600">“Build your bowl is my favourite feature!”</p>
-              <h4 className="mt-4 font-semibold text-gray-700">Rajeev Gupta</h4>
+              </div>
             </div>
           </div>
-
         </div>
-      </section>
+      </div>
+      {/* end testimonail-section */}
 
-      {/* FOOTER */}
-      <footer className="w-full bg-green-700 py-10 mt-20">
-        <div className="max-w-7xl mx-auto px-6 text-white grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h4 className="text-2xl font-bold">Advik Fruit Box</h4>
-            <p className="mt-3 text-gray-200">
-              Fresh & hygienic cut fruits delivered at your convenience.
-            </p>
-          </div>
+      {/* advertisement section */}
+      <div className="abt-section mb-150">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 col-md-12">
+              <div className="abt-bg">
+                <a href="https://www.youtube.com/watch?v=DBLlFWYcIGQ" className="video-play-btn popup-youtube">
+                  <i className="fas fa-play"></i>
+                </a>
+              </div>
+            </div>
 
-          <div>
-            <h4 className="text-xl font-semibold mb-3">Quick Links</h4>
-            <ul className="space-y-2 text-gray-200">
-              <li>Shop</li>
-              <li>Subscriptions</li>
-              <li>Build Your Bowl</li>
-              <li>Contact</li>
-            </ul>
-          </div>
+            <div className="col-lg-6 col-md-12">
+              <div className="abt-text">
+                <p className="top-sub">Since Year 1999</p>
+                <h2>We are <span className="orange-text">Fruitkha</span></h2>
+                <p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
+                <a href="about.html" className="boxed-btn mt-4">know more</a>
+              </div>
+            </div>
 
-          <div>
-            <h4 className="text-xl font-semibold mb-3">Contact Us</h4>
-            <p className="text-gray-200">support@advikfruitbox.com</p>
-            <p className="text-gray-200 mt-1">+91 98765 43210</p>
           </div>
         </div>
+      </div>
+      {/* end advertisement section */}
 
-        <p className="text-center text-gray-300 mt-10">© 2025 Advik Fruit Box • All Rights Reserved</p>
-      </footer>
-    </main>
-  );
+    
+      <section className="shop-banner">
+  <div className="container">
+    <h3>
+      <DynamicMonth /> sale is on! <br />
+      with big <span className="orange-text">Discount...</span>
+    </h3>
+
+    <div className="sale-percent">
+      <span>Sale! <br /> Upto</span>45% <span>off</span>
+    </div>
+
+    <a href="shop.html" className="cart-btn btn-lg">Grab Your Box</a>
+   
+  </div>
+</section>
+      {/* end shop banner */}
+
+
+      <SubscriptionSection/>
+
+      <FeaturedProductsCarousel />
+
+      <Footer />
+
+      <Copyright />
+
+  
+  </>);
 }
