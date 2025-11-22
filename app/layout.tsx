@@ -6,6 +6,7 @@ import FeaturesSection  from "../components/FeaturesSection"
 import WhatsAppPopup  from "../components/WhatsAppPopup"
 import Footer from "../components/Footer"
 import Copyright  from "../components/Copyright"
+import type { ReactNode } from "react";
 
 export const metadata = {
   title: "Advik Fruit Box",
