@@ -72,11 +72,11 @@ export default function TestimonialSection() {
                     <div className="single-testimonial-slider text-center px-3">
 
                       <div className="client-avater mb-3">
-                        <img
-                          src={t.avatar}
-                          alt={t.name}
-                          className="mx-auto rounded-full w-24 h-24"
-                        />
+                        <div className="mx-auto rounded-full w-22 h-22 text-white bg-orange-400 flex justify-center items-center">
+                          
+                          <span className="font-extrabold text-4xl "> {t.name[0]}</span>
+                          
+                        </div>
                       </div>
 
                       <h3 className="text-xl font-semibold">

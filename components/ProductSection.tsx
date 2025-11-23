@@ -1,6 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+
+
 
 interface Product {
   name: string;
@@ -98,6 +101,17 @@ export default function ProductSection() {
           ))}
         </div>
 
+<div className="flex w-full justify-center">
+
+               <Link
+  href="/products"
+  className="cart-btn !bg-orange-500 !text-white !py-3 !px-6 !rounded-sm !font-medium !shadow-md !hover:bg-orange-600 !transition-all inline-flex items-center gap-2 hover:scale-105"
+>
+  <i className="fas fa-eye"></i>
+  View All Products
+</Link>
+
+  </div>
       </div>
     </div>
   );

@@ -1,37 +1,47 @@
-import Image from "next/image";
+"use client";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[100vh] flex flex-col justify-center items-center text-center">
-      
-        <Image
-          src="/assets/hero-bg.png"
-          alt="Hero Background"
-         fill
-           priority
-           sizes="100vw"
-           className="object-cover object-center"
-        />
-
-        {/* Overlay */}
-      <div className="absolute inset-0 bg-black/70"></div>
-
-          {/* Content */}
-      <div className="relative z-10 mt-28">
-        <h1 className="text-white font-bold text-9xl md:text-6xl drop-shadow-lg">
-          Advik Fruit Box
-        </h1>
-        <h2 className="text-orange-500 font-bold text-3xl md:text-5xl mt-2 drop-shadow-lg">
-          #OrderNow
-        </h2>
-
-        <button className="mt-10 bg-orange-500 hover:bg-orange-600 text-white text-lg font-semibold px-10 py-3 rounded-full shadow-xl">
-          Order Now
-        </button>
-      </div>
+   <div className="hero-area relative w-full h-[90vh] overflow-hidden">
     
-
-
-    </section>
+   
+     {/* Background Video */}
+     <video
+       className="absolute top-0 left-0 w-full h-full object-cover"
+       autoPlay
+       loop
+       muted
+         preload="none"
+         poster="/assets/img/hero-bg-png"
+       playsInline
+     >
+       <source src="/assets/img/herobg-vid.mp4" type="video/mp4" />
+     </video>
+   
+     {/* Dark Overlay */}
+     <div className="absolute top-0 left-0 w-full h-full bg-black/70"></div>
+   
+     {/* Hero Content */}
+     <div className="container relative z-10">
+       <div className="row">
+         <div className="col-lg-9 offset-lg-2 text-center">
+           <div className="hero-text">
+             <div className="hero-text-tablecell">
+               <p className="subtitle text-orange-400">Fresh &amp; Organic</p>
+               <h1 className="text-white">Fresh Fruits Packed With Love & Care</h1>
+               <div className="hero-btns mt-4">
+                 <a href="/products" className="boxed-btn">
+                   Explore Fruit Boxes
+                 </a>
+                 <a href="contact.html" className="bordered-btn">
+                   Get in Touch
+                 </a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div> 
+   </div>
   );
 }

@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 👇 force override ALL bootstrap / old css */
+@layer components {
+  .fr-card { @apply bg-white rounded-2xl shadow-lg p-5 border border-gray-200; }
+  .fr-title { @apply text-lg font-semibold text-gray-800; }
+  .fr-price { @apply text-orange-600 text-xl font-bold; }
+  .fr-button { @apply bg-orange-500 text-white py-3 rounded-xl font-bold block text-center; }
+}

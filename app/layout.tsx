@@ -1,4 +1,3 @@
-import Script from "next/script";
 import "./globals.css";  
 import Loader  from "../components/Loader"
 import Header  from "../components/Header"
@@ -7,6 +6,8 @@ import WhatsAppPopup  from "../components/WhatsAppPopup"
 import Footer from "../components/Footer"
 import Copyright  from "../components/Copyright"
 import type { ReactNode } from "react";
+import OfferPopup from "@/components/OfferPopup";
+
 
 export const metadata = {
   title: "Advik Fruit Box",
@@ -31,15 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
 
-        {/* Keep CSS files as-is (placed in public/assets/css) */}
-        <link rel="stylesheet" href="/assets/css/all.min.css" />
-        <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
-        {/* <link rel="stylesheet" href="/assets/css/owl.carousel.css" /> */}
-        <link rel="stylesheet" href="/assets/css/magnific-popup.css" />
-        <link rel="stylesheet" href="/assets/css/animate.css" />
-        <link rel="stylesheet" href="/assets/css/meanmenu.min.css" />
-        <link rel="stylesheet" href="/assets/css/main.css" />
-        <link rel="stylesheet" href="/assets/css/responsive.css" />
+        
        
       </head>
       <body>
@@ -54,18 +47,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Footer />
 
       <Copyright />
+  <OfferPopup />
 
-        {/* Scripts: jQuery must be loaded before plugins */}
-        <Script src="/assets/js/jquery-1.11.3.min.js" strategy="beforeInteractive" />
-        <Script src="/assets/bootstrap/js/bootstrap.min.js" strategy="beforeInteractive" />
-        {/* <Script src="/assets/js/jquery.countdown.js" strategy="afterInteractive" /> */}
-        <Script src="/assets/js/jquery.isotope-3.0.6.min.js" strategy="afterInteractive" />
-        <Script src="/assets/js/waypoints.js" strategy="afterInteractive" />
-        <Script src="/assets/js/owl.carousel.min.js" strategy="afterInteractive" />
-        <Script src="/assets/js/jquery.magnific-popup.min.js" strategy="afterInteractive" />
-        <Script src="/assets/js/jquery.meanmenu.min.js" strategy="afterInteractive" />
-        <Script src="/assets/js/sticker.js" strategy="afterInteractive" />
-        <Script src="/assets/js/main.js" strategy="afterInteractive" />
+       
+
       </body>
     </html>
   );

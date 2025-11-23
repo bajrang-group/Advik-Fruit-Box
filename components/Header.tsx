@@ -1,75 +1,106 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+
 export default function Header() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const [scrolled, setScrolled] = useState(false);
+
+  // Transparent → Solid only on homepage
+  useEffect(() => {
+    if (!isHome) return;
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHome]);
+
+  // Active link style
+  const activeLink = (path: string) =>
+    pathname === path ? "text-orange-500 font-bold" : "";
+
   return (
     <>
-      {/* header */}
-      <div className="top-header-area" id="sticker">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 col-sm-12 text-center">
-              <div className="main-menu-wrap">
+      {/* KEEP ALL CSS FILES EXACT SAME */}
+      <link rel="stylesheet" href="/assets/css/all.min.css" />
+      <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="/assets/css/magnific-popup.css" />
+      <link rel="stylesheet" href="/assets/css/animate.css" />
+      <link rel="stylesheet" href="/assets/css/meanmenu.min.css" />
+      <link rel="stylesheet" href="/assets/css/main.css" />
+      <link rel="stylesheet" href="/assets/css/responsive.css" />
 
-                {/* logo */}
+      <header
+        id="sticker"
+        className={`
+          fixed w-full z-50 transition-all duration-500 
+          ${isHome ? (scrolled ? "bg-[#051922] shadow-lg" : "bg-transparent") : "bg-[#051922] shadow-lg"}
+        `}
+      >
+        <div className="container py-2">
+          <div className="row">
+            <div className="col-lg-12 text-center">
+
+              <div className="main-menu-wrap">
+                
+                {/* Logo */}
                 <div className="site-logo">
-                  <a href="/">
+                  <Link href="/">
                     <img src="/assets/img/logo.png" alt="Advik Fruit Box Logo" />
-                  </a>
+                  </Link>
                 </div>
 
-                {/* menu start */}
+                {/* Navigation Menu */}
                 <nav className="main-menu">
                   <ul>
 
-                    <li className="current-list-item">
-                      <a href="#">Home</a>
-                      <ul className="sub-menu">
-                        <li><a href="/">Static Home</a></li>
-                        <li><a href="/slider">Slider Home</a></li>
-                      </ul>
-                    </li>
-
-                    <li><a href="/about">About</a></li>
-
+                    {/* HOME */}
                     <li>
-                      <a href="#">Pages</a>
-                      <ul className="sub-menu">
-                        <li><a href="/404">404 Page</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/cart">Cart</a></li>
-                        <li><a href="/checkout">Check Out</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/news">News</a></li>
-                        <li><a href="/shop">Shop</a></li>
-                      </ul>
+                      <Link href="/" className={activeLink("/")}>
+                        Home
+                      </Link>
                     </li>
 
+                    {/* ABOUT */}
                     <li>
-                      <a href="/news">News</a>
-                      <ul className="sub-menu">
-                        <li><a href="/news">News</a></li>
-                        <li><a href="/single-news">Single News</a></li>
-                      </ul>
+                      <Link href="/about" className={activeLink("/about")}>
+                        About
+                      </Link>
                     </li>
 
-                    <li><a href="/contact">Contact</a></li>
-
+                    {/* CONTACT */}
                     <li>
-                      <a href="/shop">Shop</a>
-                      <ul className="sub-menu">
-                        <li><a href="/shop">Shop</a></li>
-                        <li><a href="/checkout">Check Out</a></li>
-                        <li><a href="/single-product">Single Product</a></li>
-                        <li><a href="/cart">Cart</a></li>
-                      </ul>
+                      <Link href="/contact" className={activeLink("/contact")}>
+                        Contact
+                      </Link>
                     </li>
 
-                    {/* header icons */}
+                    {/* HELP */}
+                    <li>
+                      <Link href="/help" className={activeLink("/help")}>
+                        Help
+                      </Link>
+                    </li>
+
+                    {/* SHOP */}
+                    <li>
+                      <Link href="/products" className={activeLink("/products")}>
+                        Shop
+                      </Link>
+                    </li>
+
+                    {/* Icons */}
                     <li>
                       <div className="header-icons">
-                        <a className="shopping-cart" href="/cart">
+                        <Link href="/cart" className="shopping-cart">
                           <i className="fas fa-shopping-cart" />
-                        </a>
+                        </Link>
 
                         <a className="mobile-hide search-bar-icon" href="#">
                           <i className="fas fa-search" />
@@ -80,20 +111,29 @@ export default function Header() {
                   </ul>
                 </nav>
 
-                {/* mobile search icon */}
+                {/* Mobile Search Icon */}
                 <a className="mobile-show search-bar-icon" href="#">
                   <i className="fas fa-search" />
                 </a>
 
+                {/* Mobile Menu placeholder */}
                 <div className="mobile-menu"></div>
-                {/* menu end */}
 
               </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* end header */}
+      </header>
+
+      {/* Fix menu item hover color override */}
+      <style jsx global>{`
+        .main-menu ul li a {
+          transition: 0.3s ease;
+        }
+        .main-menu ul li a.text-orange-500 {
+          color: #ff7a00 !important;
+        }
+      `}</style>
     </>
   );
 }

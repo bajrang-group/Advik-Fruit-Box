@@ -30,14 +30,14 @@ export default function SubscriptionSection() {
               <div className="subscription-card shadow-lg hover:scale-105 transition-all duration-300 rounded-xl p-4 bg-white text-center h-full flex flex-col justify-between">
 
                 <div>
-                  <h3 className="font-bold text-2xl mb-2">Weekly Plan</h3>
+                  <h3 className="font-bold text-2xl mb-2">Daily Plan</h3>
                   <p className="text-gray-600 mb-3">
                     Fresh fruits delivered 7 days a week.
                   </p>
 
                   <div className="price-box mb-4">
                     <span className="text-4xl font-extrabold text-orange-500"> ₹99</span>
-                    <p className="text-sm text-gray-500">per week</p>
+                    <p className="text-sm text-gray-500">per day</p>
                   </div>
 
                   <ul className="text-left mb-4 space-y-2">
@@ -56,12 +56,12 @@ export default function SubscriptionSection() {
               <div className="subscription-card featured shadow-2xl hover:scale-110 transition-all duration-300 rounded-xl p-6 bg-orange-50 text-center border-2 border-orange-500 h-full flex flex-col justify-between">
 
                 <div>
-                  <h3 className="font-bold text-2xl mb-2 text-orange-600">Monthly Plan</h3>
+                  <h3 className="font-bold text-2xl mb-2 text-orange-600">Weekly Plan</h3>
                   <p className="text-gray-700 mb-3">Best value for healthy fruit lovers.</p>
 
                   <div className="price-box mb-4">
-                    <span className="text-4xl font-extrabold text-orange-600"> ₹2100</span>
-                    <p className="text-sm text-gray-600">per month</p>
+                    <span className="text-4xl font-extrabold text-orange-600"> ₹530</span>
+                    <p className="text-sm text-gray-600">per week</p>
                   </div>
 
                   <ul className="text-left mb-4 space-y-2">
@@ -81,14 +81,14 @@ export default function SubscriptionSection() {
               <div className="subscription-card shadow-lg hover:scale-105 transition-all duration-300 rounded-xl p-4 bg-white text-center h-full flex flex-col justify-between">
 
                 <div>
-                  <h3 className="font-bold text-2xl mb-2">Yearly Plan</h3>
+                  <h3 className="font-bold text-2xl mb-2">Monthly Plan</h3>
                   <p className="text-gray-600 mb-3">
                     Enjoy fruits all year with big savings.
                   </p>
 
                   <div className="price-box mb-4">
-                    <span className="text-4xl font-extrabold text-orange-500"> ₹9900</span>
-                    <p className="text-sm text-gray-500">per year</p>
+                    <span className="text-4xl font-extrabold text-orange-500"> ₹1990</span>
+                    <p className="text-sm text-gray-500">per month</p>
                   </div>
 
                   <ul className="text-left mb-4 space-y-2">
