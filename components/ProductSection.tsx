@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 interface Product {
   name: string;
   price: number;
@@ -29,6 +31,8 @@ const products: Product[] = [
 ];
 
 export default function ProductSection() {
+  const router = useRouter(); // ✅ FIXED – router added
+
   return (
     <div className="product-section mt-24 mb-150">
       <div className="container">
@@ -59,24 +63,35 @@ export default function ProductSection() {
               }`}
             >
               <div className="single-product-item">
+
+                {/* IMAGE */}
                 <div className="product-image">
                   <a href={p.link}>
                     <img src={p.image} alt={p.name} />
                   </a>
                 </div>
 
+                {/* NAME */}
                 <h3>{p.name}</h3>
 
+                {/* PRICE */}
                 <p className="product-price">
                   <span>Per Box</span> ₹ {p.price}
                 </p>
 
-              <a
-  href={`/product/${p.name.replace(/ /g, "-").toLowerCase()}?name=${p.name}&price=${p.price}&image=${p.image}`}
-  className="cart-btn"
+                {/* ADD TO CART BUTTON */}
+                <button
+  onClick={() =>
+    router.push(
+      `/order?name=${encodeURIComponent(p.name)}&price=${p.price}&image=${p.image}`
+    )
+  }
+  className="cart-btn !bg-orange-500 !text-white !py-3 !px-6 !rounded-3xl !font-medium !shadow-md !hover:bg-orange-600 !transition-all inline-flex items-center gap-2"
 >
-  <i className="fas fa-shopping-cart"></i> Add to Cart
-</a>
+  <i className="fas fa-shopping-cart"></i>
+  Add to Cart
+</button>
+
 
               </div>
             </div>

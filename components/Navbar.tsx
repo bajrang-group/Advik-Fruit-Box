@@ -1,9 +1,14 @@
 "use client";
+
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const  pathname = usePathname();
+
+  const isHome = pathname === "/"
 
   return (
     <header className="w-full border-b bg-white fixed top-0 left-0 z-50">
@@ -17,7 +22,9 @@ export default function Navbar() {
             width={40}
             height={40}
           />
-          <span className="font-bold text-2xl text-black">Advik Fruit Box</span>
+          <span className="font-bold text-2xl text-black">
+            Advik Fruit Box
+          </span>
         </div>
 
         {/* Desktop Menu */}
@@ -34,6 +41,7 @@ export default function Navbar() {
           <button className="border border-black rounded-full px-5 py-2 text-[16px] hover:bg-gray-100">
             Schedule Meet
           </button>
+
           <button className="bg-orange-500 text-white rounded-full px-6 py-2 text-[16px] hover:bg-orange-600">
             Order Online
           </button>
@@ -46,7 +54,6 @@ export default function Navbar() {
         >
           ☰
         </button>
-
       </div>
 
       {/* Mobile Menu */}
@@ -62,6 +69,7 @@ export default function Navbar() {
             <button className="border border-black rounded-full px-5 py-2 text-[16px] hover:bg-gray-100">
               Schedule Meet
             </button>
+
             <button className="bg-orange-500 text-white rounded-full px-6 py-2 text-[16px] hover:bg-orange-600">
               Order Online
             </button>

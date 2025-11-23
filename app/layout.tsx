@@ -10,7 +10,7 @@ import type { ReactNode } from "react";
 
 export const metadata = {
   title: "Advik Fruit Box",
-  description: "Responsive Bootstrap4 Shop Template, Created by Bajrang Group",
+  description: "Created by Bajrang Team",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* Keep CSS files as-is (placed in public/assets/css) */}
         <link rel="stylesheet" href="/assets/css/all.min.css" />
         <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="/assets/css/owl.carousel.css" />
+        {/* <link rel="stylesheet" href="/assets/css/owl.carousel.css" /> */}
         <link rel="stylesheet" href="/assets/css/magnific-popup.css" />
         <link rel="stylesheet" href="/assets/css/animate.css" />
         <link rel="stylesheet" href="/assets/css/meanmenu.min.css" />

@@ -33,3 +33,10 @@ body {
 .swiper-slide {
   height: auto !important;
 }
+
+/* Disable old theme CSS from affecting Tailwind pages */
+.order-page * {
+  all: unset;
+  all: revert-layer;
+  font-family: inherit;
+}

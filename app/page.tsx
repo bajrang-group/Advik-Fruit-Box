@@ -16,16 +16,7 @@ import ProductSection from "@/components/ProductSection";
 
 export default function Home() {
   return (
-    <>
-
-        
-
-
-   
-
-
-   
-   
+    <>    
       {/* hero area */}
 <div className="hero-area relative w-full h-[90vh] overflow-hidden">
 
@@ -65,8 +56,7 @@ export default function Home() {
         </div>
       </div>
     </div>
-  </div>
-  
+  </div> 
 </div>
 
       {/* end hero area */}
@@ -76,8 +66,6 @@ export default function Home() {
       
 
       {/* product section */}
-   
-
 <ProductSection />
 
 
